@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بطوله الطراخين</title>
+    <style>
+      :root {
+        --primary-color: #1b5e20;
+        --secondary-color: #0d0d0d;
+        --accent-color: #00e676;
+        --bg-color: #f0f2f5;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-color);
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color) 0%,
+          #333 100%
+        );
+        color: white;
+        border-bottom: 6px solid var(--accent-color);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
+
+      h2.section-title {
+        text-align: center;
+        color: var(--secondary-color);
+        margin-bottom: 30px;
+        border-right: 5px solid var(--accent-color);
+        padding-right: 15px;
+      }
+
+      /* تصميم جدول الترتيب */
+      .stats-table-container {
+        overflow-x: auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 50px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 600px;
+      }
+
+      th {
+        background-color: var(--secondary-color);
+        color: var(--accent-color);
+        padding: 15px;
+        text-align: center;
+      }
+
+      td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      tr:hover {
+        background-color: #f1f8e9;
+      }
+
+      .points-col {
+        background-color: #e8f5e9;
+        color: var(--primary-color);
+        font-size: 1.2rem;
+      }
+
+      .tournament-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .team-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid #ddd;
+      }
+
+      .team-header {
+        background: var(--primary-color);
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .player-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .player-list li {
+        padding: 10px 20px;
+        border-bottom: 1px solid #eee;
+        font-size: 0.95rem;
+      }
+
+      footer {
+        background: var(--secondary-color);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 50px;
+      }
+
+      .designer-name {
+        color: var(--accent-color);
+        font-weight: bold;
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🏆 بطولة الطراخين الكبرى 🏆</h1>
+      <p>متابعة حيّة للنتائج والترتيب</p>
+    </header>
+
+    <div class="container">
+      <h2 class="section-title">📊 جدول ترتيب النقاط</h2>
+      <div class="stats-table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>الترتيب</th>
+              <th>الفريق</th>
+              <th>لعب</th>
+              <th>فوز</th>
+              <th>تعادل</th>
+              <th>خسارة</th>
+              <th>له (+)</th>
+              <th>عليه (-)</th>
+              <th class="points-col">النقاط</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>مصطفى الصغير</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>حسام عبدالعزيز</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>جلال متولي</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>محمد مصطفى</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>باسم عبدالوارث</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>ياسر الزهري</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>رضوان عادل</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>احمد عبدالعزيز</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">👥 قوائم الفرق المشاركة</h2>
+      <div class="tournament-grid">
+        <div class="team-card">
+          <div class="team-header">فريق مصطفى الصغير</div>
+          <ul class="player-list">
+            <li>حسين شوالي</li>
+            <li>محمد جبر الله</li>
+            <li>احمد عبدالله</li>
+            <li>حسن سيد</li>
+            <li>منصور العندليب</li>
+            <li>مصطفى الصغير</li>
+            <li>ضياء عبدالعزيز</li>
+          </ul>
+        </div>
+
+        <div class="team-card">
+          <div class="team-header">فريق حسام عبدالعزيز</div>
+          <ul class="player-list">
+            <li>عمر يوسف</li>
+            <li>احمد حجاج</li>
+            <li>حسام عبدالعزيز</li>
+            <li>محمد صلاح دسوقي</li>
+            <li>طه ريان</li>
+            <li>عمر الصغير</li>
+            <li>ايهاب نصر</li>
+          </ul>
+        </div>
+
+        <div class="team-card">
+          <div class="team-header">فريق جلال متولي</div>
+          <ul class="player-list">
+            <li>محمد اشرف</li>
+            <li>محمود صلاح</li>
+            <li>علي وفدي</li>
+            <li>عبدالرحمن رجب</li>
+            <li>محمد الجلهومي</li>
+            <li>احمد عامر</li>
+            <li>جلال متولي</li>
+          </ul>
+        </div>
+
+        <div class="team-card">
+          <div class="team-header">فريق محمد مصطفى</div>
+          <ul class="player-list">
+            <li>محمد مصطفى</li>
+            <li>زياد حجاج</li>
+            <li>ميدو اشرف</li>
+            <li>محمد خالد</li>
+            <li>احمد سيد بزوكا</li>
+            <li>اسلام سيد</li>
+            <li>محمد سيد</li>
+          </ul>
+        </div>
+
+        <div class="team-card">
+          <div class="team-header">فريق باسم عبدالوارث</div>
+          <ul class="player-list">
+            <li>باسم عبدالوارث</li>
+            <li>محمود سيد</li>
+            <li>احمد انور</li>
+            <li>محمود عبدالمنعم</li>
+            <li>محمد احمد حليب</li>
+            <li>يوسف عبدالحميد</li>
+            <li>عبدو راضي</li>
+          </ul>
+        </div>
+
+        <div class="team-card">
+          <div class="team-header">فريق ياسر الزهري</div>
+          <ul class="player-list">
+            <li>محمد عرفات</li>
+            <li>عبد الرحمن فايز</li>
+            <li>احمد عبدالمنعم</li>
+            <li>يوسف رجب</li>
+            <li>ياسر الزهري</li>
+            <li>احمد سمير</li>
+            <li>امين عبدالراضي</li>
+          </ul>
+        </div>
+
+        <div class="team-card">
+          <div class="team-header">فريق رضوان عادل</div>
+          <ul class="player-list">
+            <li>عبدالرحمن مكي</li>
+            <li>يوسف ابراهيم</li>
+            <li>محمد سيد إسماعيل</li>
+            <li>رضوان عادل</li>
+            <li>إبراهيم فراج</li>
+            <li>احمد يونس</li>
+            <li>محمد حامد</li>
+          </ul>
+        </div>
+
+        <div class="team-card">
+          <div class="team-header">فريق احمد عبدالعزيز</div>
+          <ul class="player-list">
+            <li>احمد عبدالعزيز</li>
+            <li>عبدالله مكي</li>
+            <li>احمد خالد زمبوكا</li>
+            <li>محمود سيد</li>
+            <li>احمد خالد مكي</li>
+            <li>محمد صلاح مكي</li>
+            <li>محمد عبدالمنعم</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="signature">
+        تمت البرمجة والتصميم بواسطة: <br />
+        <span class="designer-name">Youssef Ragab🚀</span>
+      </div>
+      <p>© 2026 جميع الحقوق محفوظة لبطولة الطراخين</p>
+    </footer>
+  </body>
+</html>
