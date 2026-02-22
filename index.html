@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>بطوله الطراخين</title>
+    <title>بطولة الشهداء - الطراخين</title>
     <style>
       :root {
         --primary-color: #1b5e20;
         --secondary-color: #0d0d0d;
         --accent-color: #00e676;
+        --gold-color: #ffd700;
         --bg-color: #f0f2f5;
       }
 
@@ -21,7 +22,7 @@
 
       header {
         text-align: center;
-        padding: 40px 20px;
+        padding: 30px 20px;
         background: linear-gradient(
           135deg,
           var(--secondary-color) 0%,
@@ -29,6 +30,18 @@
         );
         color: white;
         border-bottom: 6px solid var(--accent-color);
+      }
+
+      .logo-container img {
+        max-width: 150px;
+        height: auto;
+        filter: drop-shadow(0 0 10px var(--accent-color));
+      }
+
+      header h1 {
+        margin: 10px 0;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       }
 
       .container {
@@ -40,18 +53,22 @@
       h2.section-title {
         text-align: center;
         color: var(--secondary-color);
-        margin-bottom: 30px;
+        margin: 40px 0 20px;
         border-right: 5px solid var(--accent-color);
         padding-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
       }
 
-      /* تصميم جدول الترتيب */
-      .stats-table-container {
+      /* تنسيق الجداول (الترتيب والهدافيين) */
+      .table-container {
         overflow-x: auto;
         background: white;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        margin-bottom: 50px;
+        margin-bottom: 40px;
       }
 
       table {
@@ -59,40 +76,44 @@
         border-collapse: collapse;
         min-width: 600px;
       }
-
       th {
         background-color: var(--secondary-color);
         color: var(--accent-color);
         padding: 15px;
         text-align: center;
       }
-
       td {
         padding: 12px;
         text-align: center;
         border-bottom: 1px solid #eee;
         font-weight: bold;
       }
-
-      tr:nth-child(even) {
-        background-color: #f9f9f9;
-      }
       tr:hover {
         background-color: #f1f8e9;
       }
 
-      .points-col {
+      .points-col,
+      .goals-col {
         background-color: #e8f5e9;
         color: var(--primary-color);
+        font-size: 1.1rem;
+      }
+
+      /* قسم الهدافين المميز */
+      .top-scorer-row td {
+        color: var(--secondary-color);
+      }
+      .top-scorer-row:first-child td {
+        color: #d32f2f;
         font-size: 1.2rem;
       }
 
+      /* شبكة الفرق */
       .tournament-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
       }
-
       .team-card {
         background: white;
         border-radius: 15px;
@@ -100,7 +121,6 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         border: 1px solid #ddd;
       }
-
       .team-header {
         background: var(--primary-color);
         color: white;
@@ -108,7 +128,6 @@
         text-align: center;
         font-weight: bold;
       }
-
       .player-list {
         list-style: none;
         padding: 0;
@@ -117,7 +136,13 @@
       .player-list li {
         padding: 10px 20px;
         border-bottom: 1px solid #eee;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .player-list li::before {
+        content: "🏃‍♂️";
       }
 
       footer {
@@ -127,35 +152,41 @@
         padding: 40px 20px;
         margin-top: 50px;
       }
-
       .designer-name {
         color: var(--accent-color);
         font-weight: bold;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>🏆 بطولة الطراخين الكبرى 🏆</h1>
-      <p>متابعة حيّة للنتائج والترتيب</p>
+      <div class="logo-container">
+        <img
+          src="c:\Users\Client\Downloads\WhatsApp Image 2026-02-22 at 03.03.14.jpeg"
+          alt=""
+          onerror="this.style.display = 'none'"
+        />
+      </div>
+      <h1>⚽ بطولة الشهداء ⚽</h1>
+      <p>🏆 دوري الطراخين - حماس لا ينتهي 🏆</p>
     </header>
 
     <div class="container">
-      <h2 class="section-title">📊 جدول ترتيب النقاط</h2>
-      <div class="stats-table-container">
+      <h2 class="section-title">📊 جدول ترتيب النقاط 🏟️</h2>
+      <div class="table-container">
         <table>
           <thead>
             <tr>
               <th>الترتيب</th>
               <th>الفريق</th>
-              <th>لعب</th>
-              <th>فوز</th>
-              <th>تعادل</th>
-              <th>خسارة</th>
+              <th>لعب ⚽</th>
+              <th>فوز ✅</th>
+              <th>تعادل 🤝</th>
+              <th>خسارة ❌</th>
               <th>له (+)</th>
               <th>عليه (-)</th>
-              <th class="points-col">النقاط</th>
+              <th class="points-col">النقاط ⭐</th>
             </tr>
           </thead>
           <tbody>
@@ -251,10 +282,44 @@
         </table>
       </div>
 
+      <h2 class="section-title">⚽قائمة هدافي البطولة</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>المركز</th>
+              <th>اللاعب</th>
+              <th>الفريق</th>
+              <th class="goals-col">الأهداف ⚽</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="top-scorer-row">
+              <td>🥇 1</td>
+              <td>اسم اللاعب</td>
+              <td>اسم الفريق</td>
+              <td class="goals-col">0</td>
+            </tr>
+            <tr class="top-scorer-row">
+              <td>🥈 2</td>
+              <td>اسم اللاعب</td>
+              <td>اسم الفريق</td>
+              <td class="goals-col">0</td>
+            </tr>
+            <tr class="top-scorer-row">
+              <td>🥉 3</td>
+              <td>اسم اللاعب</td>
+              <td>اسم الفريق</td>
+              <td class="goals-col">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <h2 class="section-title">👥 قوائم الفرق المشاركة</h2>
       <div class="tournament-grid">
         <div class="team-card">
-          <div class="team-header">فريق مصطفى الصغير</div>
+          <div class="team-header">⚽ فريق مصطفى الصغير</div>
           <ul class="player-list">
             <li>حسين شوالي</li>
             <li>محمد جبر الله</li>
@@ -265,9 +330,8 @@
             <li>ضياء عبدالعزيز</li>
           </ul>
         </div>
-
         <div class="team-card">
-          <div class="team-header">فريق حسام عبدالعزيز</div>
+          <div class="team-header">⚽ فريق حسام عبدالعزيز</div>
           <ul class="player-list">
             <li>عمر يوسف</li>
             <li>احمد حجاج</li>
@@ -278,9 +342,8 @@
             <li>ايهاب نصر</li>
           </ul>
         </div>
-
         <div class="team-card">
-          <div class="team-header">فريق جلال متولي</div>
+          <div class="team-header">⚽ فريق جلال متولي</div>
           <ul class="player-list">
             <li>محمد اشرف</li>
             <li>محمود صلاح</li>
@@ -291,9 +354,8 @@
             <li>جلال متولي</li>
           </ul>
         </div>
-
         <div class="team-card">
-          <div class="team-header">فريق محمد مصطفى</div>
+          <div class="team-header">⚽ فريق محمد مصطفى</div>
           <ul class="player-list">
             <li>محمد مصطفى</li>
             <li>زياد حجاج</li>
@@ -304,9 +366,8 @@
             <li>محمد سيد</li>
           </ul>
         </div>
-
         <div class="team-card">
-          <div class="team-header">فريق باسم عبدالوارث</div>
+          <div class="team-header">⚽ فريق باسم عبدالوارث</div>
           <ul class="player-list">
             <li>باسم عبدالوارث</li>
             <li>محمود سيد</li>
@@ -317,9 +378,8 @@
             <li>عبدو راضي</li>
           </ul>
         </div>
-
         <div class="team-card">
-          <div class="team-header">فريق ياسر الزهري</div>
+          <div class="team-header">⚽ فريق ياسر الزهري</div>
           <ul class="player-list">
             <li>محمد عرفات</li>
             <li>عبد الرحمن فايز</li>
@@ -330,9 +390,8 @@
             <li>امين عبدالراضي</li>
           </ul>
         </div>
-
         <div class="team-card">
-          <div class="team-header">فريق رضوان عادل</div>
+          <div class="team-header">⚽ فريق رضوان عادل</div>
           <ul class="player-list">
             <li>عبدالرحمن مكي</li>
             <li>يوسف ابراهيم</li>
@@ -343,9 +402,8 @@
             <li>محمد حامد</li>
           </ul>
         </div>
-
         <div class="team-card">
-          <div class="team-header">فريق احمد عبدالعزيز</div>
+          <div class="team-header">⚽ فريق احمد عبدالعزيز</div>
           <ul class="player-list">
             <li>احمد عبدالعزيز</li>
             <li>عبدالله مكي</li>
@@ -361,10 +419,10 @@
 
     <footer>
       <div class="signature">
-        تمت البرمجة والتصميم بواسطة: <br />
-        <span class="designer-name">Youssef Ragab🚀</span>
+        🚀 تمت البرمجة والتصميم بواسطة: <br />
+        <span class="designer-name">Youssef Ragab</span>
       </div>
-      <p>© 2026 جميع الحقوق محفوظة لبطولة الطراخين</p>
+      <p>© 2026 جميع الحقوق محفوظة لبطولة الشهداء</p>
     </footer>
   </body>
 </html>
