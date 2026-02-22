@@ -9,6 +9,7 @@
         --primary-color: #1b5e20;
         --secondary-color: #0d0d0d;
         --accent-color: #00e676;
+        --gold-color: #ffd700;
         --bg-color: #f0f2f5;
       }
 
@@ -37,6 +38,12 @@
         filter: drop-shadow(0 0 10px var(--accent-color));
       }
 
+      header h1 {
+        margin: 10px 0;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
       .container {
         max-width: 1200px;
         margin: 30px auto;
@@ -55,6 +62,7 @@
         gap: 10px;
       }
 
+      /* تنسيق الجداول (الترتيب والهدافيين) */
       .table-container {
         overflow-x: auto;
         background: white;
@@ -84,15 +92,23 @@
         background-color: #f1f8e9;
       }
 
-      .points-col {
+      .points-col,
+      .goals-col {
         background-color: #e8f5e9;
         color: var(--primary-color);
-      }
-      .goals-col {
-        background-color: #fff9c4;
-        color: #f57f17;
+        font-size: 1.1rem;
       }
 
+      /* قسم الهدافين المميز */
+      .top-scorer-row td {
+        color: var(--secondary-color);
+      }
+      .top-scorer-row:first-child td {
+        color: #d32f2f;
+        font-size: 1.2rem;
+      }
+
+      /* شبكة الفرق */
       .tournament-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -164,20 +180,109 @@
             <tr>
               <th>الترتيب</th>
               <th>الفريق</th>
-              <th>لعب</th>
-              <th>فوز</th>
-              <th>تعادل</th>
-              <th>خسارة</th>
+              <th>لعب ⚽</th>
+              <th>فوز ✅</th>
+              <th>تعادل 🤝</th>
+              <th>خسارة ❌</th>
               <th>له (+)</th>
               <th>عليه (-)</th>
               <th class="points-col">النقاط ⭐</th>
             </tr>
           </thead>
-          <tbody id="league-table-body"></tbody>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>مصطفى الصغير</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>حسام عبدالعزيز</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>جلال متولي</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>محمد مصطفى</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>باسم عبدالوارث</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>ياسر الزهري</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>رضوان عادل</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>احمد عبدالعزيز</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td class="points-col">0</td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
-      <h2 class="section-title">👟 قائمة هدافي البطولة ⚽</h2>
+      <h2 class="section-title">⚽قائمة هدافي البطولة</h2>
       <div class="table-container">
         <table>
           <thead>
@@ -188,14 +293,33 @@
               <th class="goals-col">الأهداف ⚽</th>
             </tr>
           </thead>
-          <tbody id="scorers-table-body"></tbody>
+          <tbody>
+            <tr class="top-scorer-row">
+              <td>🥇 1</td>
+              <td>اسم اللاعب</td>
+              <td>اسم الفريق</td>
+              <td class="goals-col">0</td>
+            </tr>
+            <tr class="top-scorer-row">
+              <td>🥈 2</td>
+              <td>اسم اللاعب</td>
+              <td>اسم الفريق</td>
+              <td class="goals-col">0</td>
+            </tr>
+            <tr class="top-scorer-row">
+              <td>🥉 3</td>
+              <td>اسم اللاعب</td>
+              <td>اسم الفريق</td>
+              <td class="goals-col">0</td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
       <h2 class="section-title">👥 قوائم الفرق المشاركة</h2>
-      <div class="tournament-grid" id="teams-grid">
+      <div class="tournament-grid">
         <div class="team-card">
-          <div class="team-header">مصطفى الصغير</div>
+          <div class="team-header">⚽ فريق مصطفى الصغير</div>
           <ul class="player-list">
             <li>حسين شوالي</li>
             <li>محمد جبر الله</li>
@@ -207,7 +331,7 @@
           </ul>
         </div>
         <div class="team-card">
-          <div class="team-header">حسام عبدالعزيز</div>
+          <div class="team-header">⚽ فريق حسام عبدالعزيز</div>
           <ul class="player-list">
             <li>عمر يوسف</li>
             <li>احمد حجاج</li>
@@ -219,7 +343,7 @@
           </ul>
         </div>
         <div class="team-card">
-          <div class="team-header">جلال متولي</div>
+          <div class="team-header">⚽ فريق جلال متولي</div>
           <ul class="player-list">
             <li>محمد اشرف</li>
             <li>محمود صلاح</li>
@@ -231,7 +355,7 @@
           </ul>
         </div>
         <div class="team-card">
-          <div class="team-header">محمد مصطفى</div>
+          <div class="team-header">⚽ فريق محمد مصطفى</div>
           <ul class="player-list">
             <li>محمد مصطفى</li>
             <li>زياد حجاج</li>
@@ -243,7 +367,7 @@
           </ul>
         </div>
         <div class="team-card">
-          <div class="team-header">باسم عبدالوارث</div>
+          <div class="team-header">⚽ فريق باسم عبدالوارث</div>
           <ul class="player-list">
             <li>باسم عبدالوارث</li>
             <li>محمود سيد</li>
@@ -255,7 +379,7 @@
           </ul>
         </div>
         <div class="team-card">
-          <div class="team-header">ياسر الزهري</div>
+          <div class="team-header">⚽ فريق ياسر الزهري</div>
           <ul class="player-list">
             <li>محمد عرفات</li>
             <li>عبد الرحمن فايز</li>
@@ -267,7 +391,7 @@
           </ul>
         </div>
         <div class="team-card">
-          <div class="team-header">رضوان عادل</div>
+          <div class="team-header">⚽ فريق رضوان عادل</div>
           <ul class="player-list">
             <li>عبدالرحمن مكي</li>
             <li>يوسف ابراهيم</li>
@@ -279,7 +403,7 @@
           </ul>
         </div>
         <div class="team-card">
-          <div class="team-header">احمد عبدالعزيز</div>
+          <div class="team-header">⚽ فريق احمد عبدالعزيز</div>
           <ul class="player-list">
             <li>احمد عبدالعزيز</li>
             <li>عبدالله مكي</li>
@@ -295,169 +419,10 @@
 
     <footer>
       <div class="signature">
-        🚀 تصميم وبرمجة: <span class="designer-name">Youssef Ragab</span>
+        🚀 تمت البرمجة والتصميم بواسطة: <br />
+        <span class="designer-name">Youssef Ragab</span>
       </div>
       <p>© 2026 جميع الحقوق محفوظة لبطولة الشهداء</p>
     </footer>
-
-    <script>
-      // 1. بيانات الفرق (عدل النقاط هنا)
-      const teamsData = [
-        {
-          name: "مصطفى الصغير",
-          played: 0,
-          win: 0,
-          draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
-        },
-        {
-          name: "حسام عبدالعزيز",
-          played: 0,
-          win: 0,
-          draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
-        },
-        {
-          name: "جلال متولي",
-          played: 0,
-          win: 0,
-          draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
-        },
-        {
-          name: "محمد مصطفى",
-          played: 0,
-          win: 0,
-          draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
-        },
-        {
-          name: "باسم عبدالوارث",
-          played: 0,
-          win: 0,
-          draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
-        },
-        {
-          name: "ياسر الزهري",
-          played: 0,
-          win: 0,
-          draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
-        },
-        {
-          name: "رضوان عادل",
-          played: 0,
-          win: 0,
-          draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
-        },
-        {
-          name: "احمد عبدالعزيز",
-          played: 0,
-          win: 0,
-          draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
-        },
-      ];
-
-      const scorersData = [
-        { name: "اسم الاعب", goals: 0 },
-        { name: "مصطفى الصغير", goals: 0 },
-        { name: "حسين شوالي", goals: 0 },
-        { name: "احمد سيد بزوكا", goals: 0 },
-        { name: "محمد اشرف", goals: 0 },
-        { name: "محمد مصطفى", goals: 0 },
-        { name: "باسم عبدالوارث", goals: 0 },
-        { name: "ياسر الزهري", goals: 0 },
-        { name: "رضوان عادل", goals: 0 },
-        { name: "احمد عبدالعزيز", goals: 0 },
-      ];
-
-      function getTeamOfPlayer(playerName) {
-        const teamCards = document.querySelectorAll(".team-card");
-        for (let card of teamCards) {
-          const teamName = card
-            .querySelector(".team-header")
-            .innerText.replace("⚽ فريق ", "")
-            .trim();
-          const players = Array.from(
-            card.querySelectorAll(".player-list li"),
-          ).map((li) => li.innerText.trim());
-          if (players.includes(playerName)) {
-            return teamName;
-          }
-        }
-        return "غير مسجل";
-      }
-
-      function renderLeagueTable() {
-        const tableBody = document.getElementById("league-table-body");
-        const sortedTeams = [...teamsData].sort(
-          (a, b) => b.points - a.points || b.gs - b.gc - (a.gs - a.gc),
-        );
-        tableBody.innerHTML = sortedTeams
-          .map(
-            (team, index) => `
-                <tr>
-                    <td>${index + 1}</td><td>${team.name}</td><td>${team.played}</td><td>${team.win}</td>
-                    <td>${team.draw}</td><td>${team.loss}</td><td>${team.gs}</td><td>${team.gc}</td>
-                    <td class="points-col">${team.points}</td>
-                </tr>`,
-          )
-          .join("");
-      }
-
-      function renderScorersTable() {
-        const scorersBody = document.getElementById("scorers-table-body");
-        const sortedScorers = [...scorersData].sort(
-          (a, b) => b.goals - a.goals,
-        );
-        scorersBody.innerHTML = sortedScorers
-          .map((player, index) => {
-            let medal =
-              index === 0
-                ? "🥇"
-                : index === 1
-                  ? "🥈"
-                  : index === 2
-                    ? "🥉"
-                    : index + 1;
-            // هنا يتم جلب اسم الفريق تلقائياً
-            let teamName = getTeamOfPlayer(player.name);
-            return `<tr><td>${medal}</td><td>${player.name}</td><td>${teamName}</td><td class="goals-col">${player.goals}</td></tr>`;
-          })
-          .join("");
-      }
-
-      window.onload = () => {
-        renderLeagueTable();
-        renderScorersTable();
-      };
-    </script>
   </body>
 </html>
