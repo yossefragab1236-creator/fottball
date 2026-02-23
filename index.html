@@ -148,14 +148,14 @@
       <div class="logo-container">
         <img
           src="c:\Users\Client\Downloads\WhatsApp Image 2026-02-22 at 03.03.14.jpeg"
-          alt="logo"
+          alt="Logo.png"
           onerror="this.style.display = 'none'"
         />
       </div>
       <h1>⚽ بطولة الشهداء ⚽</h1>
       <p>🏆 دوري الطراخين - حماس لا ينتهي 🏆</p>
     </header>
-
+    
     <div class="container">
       <h2 class="section-title">📊 جدول ترتيب النقاط 🏟️</h2>
       <div class="table-container">
@@ -292,6 +292,29 @@
         </div>
       </div>
     </div>
+    <div class="container">
+      <h2 class="section-title">📅 جدول المواعيد واللائحة 📜</h2>
+      <div class="info-images">
+        <div class="image-card">
+          <h3>🗓️ جدول المباريات</h3>
+          <a href="schedule.jpg" target="_blank">
+            <img
+              src="c:\Users\Client\Downloads\WhatsApp Image 2026-02-22 at 18.14.03.jpeg"
+              alt="جدول المباريات"
+            />
+          </a>
+          <p><small>اضغط على الصورة للتكبير</small></p>
+        </div>
+        <div class="image-card">
+          <h3>📜 لائحة البطولة</h3>
+          <a href="rules.jpg" target="_blank">
+            <img
+              src="c:\Users\Client\Downloads\WhatsApp Image 2026-02-22 at 18.14.12.jpeg"
+              alt="لائحة البطولة"
+            />
+          </a>
+          <p><small>اضغط على الصورة للتكبير</small></p>
+        </div>
 
     <footer>
       <div class="signature">
@@ -305,97 +328,100 @@
       const teamsData = [
         {
           name: "مصطفى الصغير",
-          played: 0,
-          win: 0,
+          played: 1,
+          win: 1,
           draw: 0,
           loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
+          gs: 3,
+          gc: 1,
+          points: 3,
         },
         {
           name: "حسام عبدالعزيز",
-          played: 0,
-          win: 0,
+          played: 1,
+          win: 1,
           draw: 0,
           loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
+          gs: 3,
+          gc: 1,
+          points: 3,
         },
         {
           name: "جلال متولي",
-          played: 0,
-          win: 0,
+          played: 1,
+          win: 1,
           draw: 0,
           loss: 0,
-          gs: 0,
-          gc: 0,
-          points: 0,
+          gs: 4,
+          gc: 1,
+          points: 3,
         },
         {
           name: "محمد مصطفى",
-          played: 0,
-          win: 0,
+          played: 1,
+          win: 1,
           draw: 0,
           loss: 0,
-          gs: 0,
+          gs: 3,
           gc: 0,
-          points: 0,
+          points: 3,
         },
         {
           name: "باسم عبدالوارث",
-          played: 0,
+          played: 1,
           win: 0,
           draw: 0,
-          loss: 0,
+          loss: 1,
           gs: 0,
-          gc: 0,
+          gc: 3,
           points: 0,
         },
         {
           name: "ياسر الزهري",
-          played: 0,
+          played: 1,
           win: 0,
           draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
+          loss: 1,
+          gs: 1,
+          gc: 4,
           points: 0,
         },
         {
           name: "رضوان عادل",
-          played: 0,
+          played: 1,
           win: 0,
           draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
+          loss: 1,
+          gs: 1,
+          gc: 3,
           points: 0,
         },
         {
           name: "احمد عبدالعزيز",
-          played: 0,
+          played: 1,
           win: 0,
           draw: 0,
-          loss: 0,
-          gs: 0,
-          gc: 0,
+          loss: 1,
+          gs: 1,
+          gc: 3,
           points: 0,
         },
       ];
 
       const scorersData = [
-        { name: "اسم الاعب", goals: 0 },
-        { name: "مصطفى الصغير", goals: 0 },
-        { name: "حسين شوالي", goals: 0 },
-        { name: "احمد سيد بزوكا", goals: 0 },
-        { name: "محمد اشرف", goals: 0 },
-        { name: "محمد مصطفى", goals: 0 },
-        { name: "باسم عبدالوارث", goals: 0 },
-        { name: "ياسر الزهري", goals: 0 },
-        { name: "رضوان عادل", goals: 0 },
-        { name: "احمد عبدالعزيز", goals: 0 },
+        { name: "محمد الجلهومي", goals: 3 },
+        { name: "محمد سيد", goals: 2 },
+        { name: "طه ريان", goals: 1 },
+        { name: "عمر يوسف", goals: 1 },
+        { name: "منصور العندليب", goals: 1 },
+        { name: "احمد عبدالله", goals: 1 },
+        { name: "احمد حجاج", goals: 1 },
+        { name: "احمد عامر", goals: 1 },
+        { name: "زياد حجاج", goals: 1 },
+        { name: "يوسف رجب", goals: 1 },
+        { name: "احمد خالد زمبوكا", goals: 1 },
+        { name: "ضياء عبدالعزيز", goals: 1 },
+        { name: "عبدالرحمن مكي", goals: 1 },
       ];
 
       function getTeamOfPlayer(playerName) {
