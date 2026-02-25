@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>بطولة الشهداء - الطراخين 2026</title>
+    <title>بطولة الشهداء - الطراخين</title>
     <style>
       :root {
         --primary-color: #1b5e20;
         --secondary-color: #0d0d0d;
         --accent-color: #00e676;
-        --bg-color: #f4f7f6;
-        --white: #ffffff;
+        --bg-color: #f0f2f5;
       }
 
       body {
@@ -18,380 +17,481 @@
         background-color: var(--bg-color);
         margin: 0;
         padding: 0;
-        color: #333;
       }
 
       header {
         text-align: center;
-        padding: 40px 20px;
+        padding: 30px 20px;
         background: linear-gradient(
           135deg,
           var(--secondary-color) 0%,
-          #2c3e50 100%
+          #333 100%
         );
         color: white;
-        border-bottom: 5px solid var(--accent-color);
+        border-bottom: 6px solid var(--accent-color);
+      }
+
+      .logo-container img {
+        max-width: 150px;
+        height: auto;
+        filter: drop-shadow(0 0 10px var(--accent-color));
       }
 
       .container {
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 30px auto;
         padding: 0 20px;
       }
 
       h2.section-title {
         text-align: center;
-        background: var(--white);
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        color: var(--primary-color);
+        color: var(--secondary-color);
         margin: 40px 0 20px;
+        border-right: 5px solid var(--accent-color);
+        padding-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
       }
 
-      /* تنسيق الجداول */
       .table-container {
         overflow-x: auto;
-        background: var(--white);
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        margin-bottom: 30px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
       }
 
       table {
         width: 100%;
         border-collapse: collapse;
-        min-width: 700px;
+        min-width: 600px;
       }
-
       th {
         background-color: var(--secondary-color);
         color: var(--accent-color);
         padding: 15px;
-        font-size: 1rem;
+        text-align: center;
       }
-
       td {
         padding: 12px;
         text-align: center;
         border-bottom: 1px solid #eee;
-        font-weight: 600;
-      }
-
-      .round-row {
-        background-color: #e8f5e9 !important;
-        color: var(--primary-color);
-        font-size: 1.1rem;
-      }
-
-      .vs-cell {
-        color: #d32f2f;
         font-weight: bold;
       }
-
-      /* اللائحة */
-      .rules-card {
-        background: var(--white);
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border-right: 8px solid var(--primary-color);
+      tr:hover {
+        background-color: #f1f8e9;
       }
 
-      .rule-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #f0f0f0;
+      .points-col {
+        background-color: #e8f5e9;
+        color: var(--primary-color);
+      }
+      .goals-col {
+        background-color: #fff9c4;
+        color: #f57f17;
       }
 
-      .rule-number {
-        background: var(--primary-color);
-        color: white;
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 15px;
-        flex-shrink: 0;
-        font-size: 0.9rem;
-      }
-
-      .team-grid {
+      .tournament-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
       }
-
-      .team-box {
+      .team-card {
         background: white;
-        border-radius: 10px;
-        border: 1px solid #ddd;
+        border-radius: 15px;
         overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid #ddd;
       }
-
-      .team-name {
+      .team-header {
         background: var(--primary-color);
         color: white;
-        padding: 10px;
+        padding: 15px;
         text-align: center;
         font-weight: bold;
       }
-
       .player-list {
         list-style: none;
-        padding: 10px;
+        padding: 0;
         margin: 0;
       }
       .player-list li {
-        padding: 5px 10px;
-        border-bottom: 1px solid #f9f9f9;
+        padding: 10px 20px;
+        border-bottom: 1px solid #eee;
         font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .player-list li::before {
+        content: "🏃‍♂️";
       }
 
       footer {
         background: var(--secondary-color);
         color: white;
         text-align: center;
-        padding: 30px;
+        padding: 40px 20px;
         margin-top: 50px;
       }
-
-      .designer {
+      .designer-name {
         color: var(--accent-color);
         font-weight: bold;
-      }
-      .points-highlight {
-        background: #fff9c4;
-        color: #f57f17;
+        font-size: 1.5rem;
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>⚽ بطولة الشهداء - نجع الطراخين ⚽</h1>
-      <p>دورة رمضان 1447هـ / 2026م</p>
+      <div class="logo-container">
+        <img
+          src="c:\Users\Client\Downloads\WhatsApp Image 2026-02-22 at 03.03.14.jpeg"
+          alt="logo"
+          onerror="this.style.display = 'none'"
+        />
+      </div>
+      <h1>⚽ بطولة الشهداء ⚽</h1>
+      <p>🏆 دوري الطراخين - حماس لا ينتهي 🏆</p>
     </header>
 
+    <div>
+      <img
+        src="./WhatsApp Image 2026-02-22 at 18.14.03.jpeg"
+        alt="tournament"
+        style="
+          width: 70%;
+          max-height: 500px;
+          object-fit: cover;
+          margin-top: 20px;
+          border-radius: 20px;
+          box-shadow: 0 40px 40px rgba(0, 0, 0, 0.1);
+        "
+        onerror="this.style.display = 'none'"
+      />
+    </div>
     <div class="container">
-      <h2 class="section-title">📅 جدول مباريات البطولة</h2>
+      <h2 class="section-title">📊 جدول ترتيب النقاط 🏟️</h2>
       <div class="table-container">
         <table>
           <thead>
             <tr>
-              <th>اليوم والتاريخ</th>
-              <th>التوقيت</th>
-              <th>الفريق الأول</th>
-              <th>X</th>
-              <th>الفريق الثاني</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="round-row">
-              <td colspan="5">الجولة الأولى - الأحد 2026/02/22</td>
-            </tr>
-            <tr>
-              <td>الأحد</td>
-              <td>09:00 - 09:28</td>
-              <td>باسم عبدالوارث</td>
-              <td class="vs-cell">X</td>
-              <td>محمد مصطفى</td>
-            </tr>
-            <tr>
-              <td>الأحد</td>
-              <td>09:30 - 09:58</td>
-              <td>ياسر الزهري</td>
-              <td class="vs-cell">X</td>
-              <td>جلال متولي</td>
-            </tr>
-            <tr>
-              <td>الأحد</td>
-              <td>10:00 - 10:28</td>
-              <td>رضوان عادل</td>
-              <td class="vs-cell">X</td>
-              <td>حسام عبدالعزيز</td>
-            </tr>
-            <tr>
-              <td>الأحد</td>
-              <td>10:30 - 10:58</td>
-              <td>أحمد عبدالعزيز</td>
-              <td class="vs-cell">X</td>
-              <td>مصطفى الصغير</td>
-            </tr>
-            <tr class="round-row">
-              <td colspan="5">الجولة الثانية - الثلاثاء 2026/02/24</td>
-            </tr>
-            <tr>
-              <td>الثلاثاء</td>
-              <td>09:00 - 09:28</td>
-              <td>باسم عبدالوارث</td>
-              <td class="vs-cell">X</td>
-              <td>حسام عبدالعزيز</td>
-            </tr>
-            <tr>
-              <td>الثلاثاء</td>
-              <td>09:30 - 09:58</td>
-              <td>مصطفى الصغير</td>
-              <td class="vs-cell">X</td>
-              <td>رضوان عادل</td>
-            </tr>
-            <tr class="round-row">
-              <td colspan="5">الجولة الثالثة - الخميس 2026/02/26</td>
-            </tr>
-            <tr>
-              <td>الخميس</td>
-              <td>09:00 - 09:28</td>
-              <td>مصطفى الصغير</td>
-              <td class="vs-cell">X</td>
-              <td>ياسر الزهري</td>
-            </tr>
-            <tr class="round-row">
-              <td colspan="5">الجولة الرابعة - الأحد 2026/03/01</td>
-            </tr>
-            <tr>
-              <td>الأحد</td>
-              <td>09:00 - 09:28</td>
-              <td>باسم عبدالوارث</td>
-              <td class="vs-cell">X</td>
-              <td>مصطفى الصغير</td>
-            </tr>
-            <tr class="round-row">
-              <td colspan="5">الجولة الخامسة - الثلاثاء 2026/03/03</td>
-            </tr>
-            <tr>
-              <td>الثلاثاء</td>
-              <td>09:00 - 09:28</td>
-              <td>جلال متولي</td>
-              <td class="vs-cell">X</td>
-              <td>باسم عبدالوارث</td>
-            </tr>
-            <tr class="round-row" style="background: #fff3e0 !important">
-              <td colspan="5">الدور نصف النهائي - الخميس 2026/03/12</td>
-            </tr>
-            <tr class="round-row" style="background: #ffd54f !important">
-              <td colspan="5">المباراة النهائية - الأربعاء 2026/03/18</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2 class="section-title">📊 جدول ترتيب الفرق</h2>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>المركز</th>
+              <th>الترتيب</th>
               <th>الفريق</th>
               <th>لعب</th>
               <th>فوز</th>
               <th>تعادل</th>
               <th>خسارة</th>
-              <th>نقاط</th>
+              <th>له (+)</th>
+              <th>عليه (-)</th>
+              <th class="points-col">النقاط ⭐</th>
             </tr>
           </thead>
-          <tbody id="league-table"></tbody>
+          <tbody id="league-table-body"></tbody>
         </table>
       </div>
 
-      <h2 class="section-title">📜 لائحة البطولة</h2>
-      <div class="rules-card">
-        <div class="rule-item">
-          <div class="rule-number">1</div>
-          <div>تتولى اللجنة المنظمة الإشراف على البطولة واعتماد النتائج.</div>
+      <h2 class="section-title">👟 قائمة هدافي البطولة ⚽</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>المركز</th>
+              <th>اللاعب</th>
+              <th>الفريق</th>
+              <th class="goals-col">الأهداف ⚽</th>
+            </tr>
+          </thead>
+          <tbody id="scorers-table-body"></tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">👥 قوائم الفرق المشاركة</h2>
+      <div class="tournament-grid" id="teams-grid">
+        <div class="team-card">
+          <div class="team-header">مصطفى الصغير</div>
+          <ul class="player-list">
+            <li>حسين شوالي</li>
+            <li>محمد جبر الله</li>
+            <li>احمد عبدالله</li>
+            <li>حسن سيد</li>
+            <li>منصور العندليب</li>
+            <li>مصطفى الصغير</li>
+            <li>ضياء عبدالعزيز</li>
+          </ul>
         </div>
-        <div class="rule-item">
-          <div class="rule-number">2</div>
-          <div>التعامل مع اللجنة يكون عن طريق كابتن الفريق فقط.</div>
+        <div class="team-card">
+          <div class="team-header">حسام عبدالعزيز</div>
+          <ul class="player-list">
+            <li>عمر يوسف</li>
+            <li>احمد حجاج</li>
+            <li>حسام عبدالعزيز</li>
+            <li>محمد صلاح دسوقي</li>
+            <li>طه ريان</li>
+            <li>عمر الصغير</li>
+            <li>ايهاب نصر</li>
+          </ul>
         </div>
-        <div class="rule-item">
-          <div class="rule-number">3</div>
-          <div>
-            تتكون البطولة من مجموعة واحدة من 8 فرق يتنافسون على 4 مراكز للمربع
-            الذهبي.
-          </div>
+        <div class="team-card">
+          <div class="team-header">جلال متولي</div>
+          <ul class="player-list">
+            <li>محمد اشرف</li>
+            <li>محمود صلاح</li>
+            <li>علي وفدي</li>
+            <li>عبدالرحمن رجب</li>
+            <li>محمد الجلهومي</li>
+            <li>احمد عامر</li>
+            <li>جلال متولي</li>
+          </ul>
         </div>
-        <div class="rule-item">
-          <div class="rule-number">4</div>
-          <div>احتساب النقاط: الفوز 3 نقاط، التعادل 1 نقطة، الخسارة صفر.</div>
+        <div class="team-card">
+          <div class="team-header">محمد مصطفى</div>
+          <ul class="player-list">
+            <li>محمد مصطفى</li>
+            <li>زياد حجاج</li>
+            <li>ميدو اشرف</li>
+            <li>محمد خالد</li>
+            <li>احمد سيد بزوكا</li>
+            <li>اسلام سيد</li>
+            <li>محمد سيد</li>
+          </ul>
         </div>
-        <div class="rule-item">
-          <div class="rule-number">5</div>
-          <div>
-            عند تساوي النقاط نلجأ لـ: المواجهات المباشرة، ثم فارق الأهداف، ثم
-            الأهداف المسجلة.
-          </div>
+        <div class="team-card">
+          <div class="team-header">باسم عبدالوارث</div>
+          <ul class="player-list">
+            <li>باسم عبدالوارث</li>
+            <li>محمود سيد</li>
+            <li>احمد انور</li>
+            <li>محمود عبدالمنعم</li>
+            <li>محمد احمد حليب</li>
+            <li>يوسف عبدالحميد</li>
+            <li>عبدو راضي</li>
+          </ul>
         </div>
-        <div class="rule-item">
-          <div class="rule-number">6</div>
-          <div>زمن المباراة 28 دقيقة مقسمة على شوطين (14 دقيقة لكل شوط).</div>
+        <div class="team-card">
+          <div class="team-header">ياسر الزهري</div>
+          <ul class="player-list">
+            <li>محمد عرفات</li>
+            <li>عبد الرحمن فايز</li>
+            <li>احمد عبدالمنعم</li>
+            <li>يوسف رجب</li>
+            <li>ياسر الزهري</li>
+            <li>احمد سمير</li>
+            <li>امين عبدالراضي</li>
+          </ul>
         </div>
-        <div class="rule-item">
-          <div class="rule-number">7</div>
-          <div>يتكون كل فريق من 7 لاعبين (6 أساسي وحارس).</div>
+        <div class="team-card">
+          <div class="team-header">رضوان عادل</div>
+          <ul class="player-list">
+            <li>عبدالرحمن مكي</li>
+            <li>يوسف ابراهيم</li>
+            <li>محمد سيد إسماعيل</li>
+            <li>رضوان عادل</li>
+            <li>إبراهيم فراج</li>
+            <li>احمد يونس</li>
+            <li>محمد حامد</li>
+          </ul>
         </div>
-        <div class="rule-item">
-          <div class="rule-number">8</div>
-          <div>
-            الفريق المتأخر عن موعد المباراة بـ 5 دقائق يعتبر خاسراً 2-0.
-          </div>
-        </div>
-        <div class="rule-item">
-          <div class="rule-number">9</div>
-          <div>
-            اللاعب المطرود بإنذارين يغيب دقيقتين، أما الطرد المباشر فيحرمه من
-            المباراة كاملة.
-          </div>
-        </div>
-        <div class="rule-item">
-          <div class="rule-number">10</div>
-          <div>
-            يمنع اشتراك أي لاعب من خارج كشوفات الفريق ومن يفعل ذلك يعتبر فريقه
-            خاسراً 2-0.
-          </div>
+        <div class="team-card">
+          <div class="team-header">احمد عبدالعزيز</div>
+          <ul class="player-list">
+            <li>احمد عبدالعزيز</li>
+            <li>عبدالله مكي</li>
+            <li>احمد خالد زمبوكا</li>
+            <li>محمود سيد</li>
+            <li>احمد خالد مكي</li>
+            <li>محمد صلاح مكي</li>
+            <li>محمد عبدالمنعم</li>
+          </ul>
         </div>
       </div>
     </div>
-
+    <div>
+      <img
+        src="./WhatsApp Image 2026-02-22 at 18.14.12.jpeg"
+        alt="tournament"
+        style="
+          width: 70%;
+          max-height: 500px;
+          object-fit: cover;
+          margin-top: 20px;
+          border-radius: 20px;
+          box-shadow: 0 40px 40px rgba(0, 0, 0, 0.1);
+        "
+        onerror="this.style.display = 'none'"
+      />
+    </div>
     <footer>
-      <p>تصميم وبرمجة: <span class="designer">Youssef Ragab</span></p>
-      <p>تحت إشراف شباب نجع الطراخين</p>
+      <div class="signature">
+        🚀 تصميم وبرمجة: <span class="designer-name">Youssef Ragab</span>
+      </div>
+      <p>© 2026 جميع الحقوق محفوظة لبطولة الشهداء</p>
     </footer>
 
     <script>
-      const teams = [
-        { name: "محمد مصطفى", p: 1, w: 1, d: 0, l: 0, pts: 3 },
-        { name: "جلال متولي", p: 1, w: 1, d: 0, l: 0, pts: 3 },
-        { name: "حسام عبدالعزيز", p: 1, w: 1, d: 0, l: 0, pts: 3 },
-        { name: "مصطفى الصغير", p: 1, w: 1, d: 0, l: 0, pts: 3 },
-        { name: "باسم عبدالوارث", p: 1, w: 0, d: 0, l: 1, pts: 0 },
-        { name: "ياسر الزهري", p: 1, w: 0, d: 0, l: 1, pts: 0 },
-        { name: "رضوان عادل", p: 1, w: 0, d: 0, l: 1, pts: 0 },
-        { name: "أحمد عبدالعزيز", p: 1, w: 0, d: 0, l: 1, pts: 0 },
+      // 1. بيانات الفرق (عدل النقاط هنا)
+      const teamsData = [
+        {
+          name: "مصطفى الصغير",
+          played: 1,
+          win: 1,
+          draw: 0,
+          loss: 0,
+          gs: 3,
+          gc: 1,
+          points: 3,
+        },
+        {
+          name: "حسام عبدالعزيز",
+          played: 1,
+          win: 1,
+          draw: 0,
+          loss: 0,
+          gs: 3,
+          gc: 1,
+          points: 3,
+        },
+        {
+          name: "جلال متولي",
+          played: 1,
+          win: 1,
+          draw: 0,
+          loss: 0,
+          gs: 4,
+          gc: 1,
+          points: 3,
+        },
+        {
+          name: "محمد مصطفى",
+          played: 1,
+          win: 1,
+          draw: 0,
+          loss: 0,
+          gs: 3,
+          gc: 0,
+          points: 3,
+        },
+        {
+          name: "باسم عبدالوارث",
+          played: 1,
+          win: 0,
+          draw: 0,
+          loss: 1,
+          gs: 0,
+          gc: 3,
+          points: 0,
+        },
+        {
+          name: "ياسر الزهري",
+          played: 1,
+          win: 0,
+          draw: 0,
+          loss: 1,
+          gs: 1,
+          gc: 4,
+          points: 0,
+        },
+        {
+          name: "رضوان عادل",
+          played: 1,
+          win: 0,
+          draw: 0,
+          loss: 1,
+          gs: 1,
+          gc: 3,
+          points: 0,
+        },
+        {
+          name: "احمد عبدالعزيز",
+          played: 1,
+          win: 0,
+          draw: 0,
+          loss: 1,
+          gs: 1,
+          gc: 3,
+          points: 0,
+        },
       ];
 
-      function renderTable() {
-        const tbody = document.getElementById("league-table");
-        tbody.innerHTML = teams
-          .sort((a, b) => b.pts - a.pts)
+      // 2. بيانات الهدافين (اكتب الاسم فقط وسيظهر الفريق وحده)
+      const scorersData = [
+        { name: "محمد الجلهومي", goals: 3 },
+        { name: "محمد سيد", goals: 2 },
+        { name: "زياد حجاج", goals: 1 },
+        { name: "عمر يوسف", goals: 1 },
+        { name: "احمد عامر", goals: 1 },
+        { name: "يوسف رجب", goals: 1 },
+        { name: "طه ريان", goals: 1 },
+        { name: "احمد حجاج", goals: 1 },
+        { name: "عبدالرحمن مكي", goals: 1 },
+        { name: "منصور العندليب", goals: 1 },
+        { name: "احمد عبدالله", goals: 1 },
+        { name: "احمد خالد زمبوكا", goals: 1 },
+        { name: "ضياء عبدالعزيز", goals: 1 },
+      ];
+
+      // وظيفة للتعرف على فريق اللاعب من القوائم الموجودة في الـ HTML
+      function getTeamOfPlayer(playerName) {
+        const teamCards = document.querySelectorAll(".team-card");
+        for (let card of teamCards) {
+          const teamName = card
+            .querySelector(".team-header")
+            .innerText.replace("⚽ فريق ", "")
+            .trim();
+          const players = Array.from(
+            card.querySelectorAll(".player-list li"),
+          ).map((li) => li.innerText.trim());
+          if (players.includes(playerName)) {
+            return teamName;
+          }
+        }
+        return "غير مسجل";
+      }
+
+      function renderLeagueTable() {
+        const tableBody = document.getElementById("league-table-body");
+        const sortedTeams = [...teamsData].sort(
+          (a, b) => b.points - a.points || b.gs - b.gc - (a.gs - a.gc),
+        );
+        tableBody.innerHTML = sortedTeams
           .map(
-            (t, i) => `
-          <tr>
-            <td>${i + 1}</td>
-            <td>${t.name}</td>
-            <td>${t.p}</td>
-            <td>${t.w}</td>
-            <td>${t.d}</td>
-            <td>${t.l}</td>
-            <td class="points-highlight">${t.pts}</td>
-          </tr>
-        `,
+            (team, index) => `
+                <tr>
+                    <td>${index + 1}</td><td>${team.name}</td><td>${team.played}</td><td>${team.win}</td>
+                    <td>${team.draw}</td><td>${team.loss}</td><td>${team.gs}</td><td>${team.gc}</td>
+                    <td class="points-col">${team.points}</td>
+                </tr>`,
           )
           .join("");
       }
-      renderTable();
+
+      function renderScorersTable() {
+        const scorersBody = document.getElementById("scorers-table-body");
+        const sortedScorers = [...scorersData].sort(
+          (a, b) => b.goals - a.goals,
+        );
+        scorersBody.innerHTML = sortedScorers
+          .map((player, index) => {
+            let medal =
+              index === 0
+                ? "🥇"
+                : index === 1
+                  ? "🥈"
+                  : index === 2
+                    ? "🥉"
+                    : index + 1;
+            // هنا يتم جلب اسم الفريق تلقائياً
+            let teamName = getTeamOfPlayer(player.name);
+            return `<tr><td>${medal}</td><td>${player.name}</td><td>${teamName}</td><td class="goals-col">${player.goals}</td></tr>`;
+          })
+          .join("");
+      }
+
+      window.onload = () => {
+        renderLeagueTable();
+        renderScorersTable();
+      };
     </script>
   </body>
 </html>
